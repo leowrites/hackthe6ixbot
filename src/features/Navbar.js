@@ -45,7 +45,7 @@ export default function DrawerAppBar() {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
-        <Toolbar style={{ backgroundColor: 'black'}}>
+        <Toolbar style={{ backgroundColor: '#1C3879'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -86,9 +86,6 @@ export default function DrawerAppBar() {
         >
           {drawer}
         </Drawer>
-      </Box>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
       </Box>
     </Box>
   );
