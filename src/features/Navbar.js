@@ -12,12 +12,19 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Questions & Topics', 'Advisors'];
+
 
 export default function DrawerAppBar() {
+  let navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const pageToNavigate = {
+    'Home': () => { navigate('/') },
+    'Questions & Topics': () => { navigate('/questions') },
+    'Advisors': () => { navigate('/advisors') }
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -30,9 +37,9 @@ export default function DrawerAppBar() {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {Object.keys(pageToNavigate).map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={pageToNavigate[item]}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -45,7 +52,7 @@ export default function DrawerAppBar() {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
-        <Toolbar style={{ backgroundColor: '#1C3879'}}>
+        <Toolbar style={{ backgroundColor: 'black'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -63,11 +70,13 @@ export default function DrawerAppBar() {
             Financial Bot
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Button>
-            ))}
+            {
+              Object.keys(pageToNavigate).map((item) => (
+                // navItems.map((item) => (
+                <Button key={item} sx={{ color: '#fff' }} onClick={pageToNavigate[item]}>
+                  {item}
+                </Button>
+              ))}
           </Box>
         </Toolbar>
       </AppBar>

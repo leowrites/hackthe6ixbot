@@ -1,11 +1,14 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import ChatBox from './ChatBox'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-export default function Home(){
+const Home = () => {
+
     return (
-        <Box>
-            <ChatBox />
-        </Box>
-    )
+        <>
+            <Outlet />
+            <div>Home Page</div>
+        </>
+    );
 }
+
+export default Home;
