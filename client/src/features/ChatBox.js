@@ -13,8 +13,6 @@ export default function ChatBox() {
     // send message to api using sockets
   };
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={6}>
         <Box
           sx={{
             textAlign: 'center',
@@ -33,7 +31,7 @@ export default function ChatBox() {
             <Divider color={'white'} sx={{ my: 1 }} />
             <Stack id={'conversation-box'} spacing={1}>
               <Typography>
-                <strong>Finabot</strong>: Hi, I'm Finabot. How can I help you?
+                <strong>Finabot</strong>: Hello, I'm Finabot. How can I help you?
               </Typography>
               {
                 // show all the previous conversations
@@ -60,7 +58,5 @@ export default function ChatBox() {
             </Stack>
           </Box>
         </Box>
-      </Grid>
-    </Grid>
   );
 }

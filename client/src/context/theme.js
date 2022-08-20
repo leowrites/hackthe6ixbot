@@ -3,11 +3,11 @@ import '@fontsource/trispace'
 
 const theme = createTheme({
     typography: {
-        fontFamily: ["Trispace", "sans-serif"]
+        fontFamily: ["Trispace"]
     }
 })
 
-export default function ThemeProvider(children) {
+export default function ({children}) {
     return (
         <ThemeProvider theme={theme}>
             {children}
