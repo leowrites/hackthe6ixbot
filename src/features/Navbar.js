@@ -15,16 +15,15 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Questions & Topics', 'Advisors'];
+
 
 export default function DrawerAppBar() {
   let navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const pageToNavigate = {
     'Home': () => { navigate('/') },
-    'Advisor': () => { navigate('/advisors') },
-    'Questions': () => { navigate('/questions') },
-    'Sign In': () => { navigate('/signin') }
+    'Questions & Topics': () => { navigate('/questions') },
+    'Advisors': () => { navigate('/advisors') }
   }
 
   const handleDrawerToggle = () => {
@@ -38,9 +37,9 @@ export default function DrawerAppBar() {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {Object.keys(pageToNavigate).map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={pageToNavigate[item]}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
