@@ -26,7 +26,7 @@ export default function DrawerAppBar() {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Financial Bot
       </Typography>
       <Divider />
       <List>
@@ -41,11 +41,11 @@ export default function DrawerAppBar() {
     </Box>
   );
 
-
+  // buttons navigate to different pages
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: 'black'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
