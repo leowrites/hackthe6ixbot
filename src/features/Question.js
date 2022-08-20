@@ -1,14 +1,7 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from 'react';
 
 const Question = () => {
-
-    return (
-        <>
-            <Outlet />
-            <div>Question Page</div>
-        </>
-    );
-}
+  return <div>Question Page</div>;
+};
 
 export default Question;

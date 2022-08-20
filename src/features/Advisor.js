@@ -1,14 +1,7 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from 'react';
 
 const Advisor = () => {
-
-    return (
-        <>
-            <Outlet />
-            <div>Advisor Page Page</div>
-        </>
-    );
-}
+  return <div>Advisor Page Page</div>;
+};
 
 export default Advisor;

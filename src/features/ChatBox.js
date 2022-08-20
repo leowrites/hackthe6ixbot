@@ -5,14 +5,13 @@ import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function ChatBox() {
   const [message, setMessage] = useState('');
   const handleSendMessage = (msg) => {
     // send message to api using sockets
-
-  }
+  };
   return (
     <Grid container spacing={2}>
       <Grid item xs={6}>
@@ -25,6 +24,7 @@ export default function ChatBox() {
             border: '1px solid white',
             borderRadius: '1rem',
             height: '30rem',
+            color: 'white',
           }}>
           <Box sx={{ p: 3 }}>
             <Typography variant={'h6'} fontWeight={'bold'}>
@@ -44,7 +44,9 @@ export default function ChatBox() {
                 </Typography>
                 <TextField
                   variant='standard'
-                  onChange={(e) => {setMessage(e.target.value)}}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}
                   sx={{
                     ml: 1,
                     borderBottom: '1px solid white',

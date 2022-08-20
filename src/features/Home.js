@@ -1,14 +1,9 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import ChatBox from './ChatBox';
 
 const Home = () => {
-
-    return (
-        <>
-            <Outlet />
-            <div>Home Page</div>
-        </>
-    );
-}
+  return <ChatBox />;
+};
 
 export default Home;
